@@ -1,0 +1,71 @@
+/*  INDEX  */
+body {
+    background-color: whitesmoke;
+}
+.content {
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; 
+}
+
+.choice {
+    display: flex;
+    justify-content: center;
+}
+
+.choice button {
+    margin: 20px 15px 0 15px;
+}
+
+
+/*  FORM  */
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.pure-survey {
+    width: 80%; 
+    margin-top: 5%;
+    box-sizing: border-box;
+}
+
+.form-intro {
+    text-align: center;
+    width: 70%;
+    margin: 0 auto 20px;
+    font-size: 20px;
+}
+
+
+/*  THANKS  */
+.thanks {
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; 
+    font-size: 23px;
+}
+
+
+.text-response-box {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.main {
+    margin-bottom: 100px;
+}

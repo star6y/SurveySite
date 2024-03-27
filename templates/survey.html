@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %}Survey{% endblock %}
+
+{% block head %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('restaurant').addEventListener('change', function() {
+                var textarea = document.getElementById('conditionalRestaurant');
+                if (this.checked) {
+                    textarea.style.display = 'block';
+                } else {
+                    textarea.style.display = 'none';
+                    // if box unchecked, clear text
+                    textarea.value = '';
+                }
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block content %}
+    <div class="pure-survey">
+        <form class="pure-form pure-form-aligned" action="/survey" method="post">
+            <fieldset>
+                <p class="form-intro">In the last 30 days, how many times have you eaten at
+                 or ordered food from a restaurant? Please fill out the form below.</p>
+                
+                <div class="pure-control-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name..." required="" minlength="3"/>
+                </div>
+
+                <div class="pure-control-group">
+                    <label for="frequency">Restaurant frequency</label>
+                        <select id="frequency" name="frequency" required="">
+                            <option value="">Select an option</option>
+                            <option value="0 times">0 times</option>
+                            <option value="1 - 2 times">1 - 2 times</option>
+                            <option value="3 - 5 times">3 - 5 times</option>
+                            <option value="6 - 9 times">6 - 9 times</option>
+                            <option value="10 - 15 times">10 - 15 times</option>
+                            <option value="16 - 20 times">16 - 20 times</option>
+                            <option value="more than 21 times">more than 21 times</option>
+                        </select>
+                </div>
+
+                <div class="pure-control-group">
+                    <label for="age">What is your age</label>
+                        <select id="age" required="" name="age">
+                            <option value="">Select an option</option>
+                            <option value="Under 18 years">Under 18 years</option>
+                            <option value="18 to 22 years">18 to 22 years</option>
+                            <option value="23 - 27 years">23 - 27 years</option>
+                            <option value="28 - 30 years">28 - 30 years</option>
+                            <option value="31 - 40 years">31 - 40 years</option>
+                            <option value="41 - 50 years">41 - 50 years</option>
+                            <option value="51 - 60 years">51 - 60 years</option>
+                            <option value="61 - 70 years">61 - 70 years</option>
+                            <option value="Older than 70 years">Older than 70 years</option>
+                        </select>
+                </div>
+
+
+                <!-- <div></div>
+                <div class="pure-control-group">
+                    <label>What meal time?</label>
+                </div> -->
+
+                <!-- <div class="radio-group"> -->
+                <div class="pure-control-group"> 
+                    <label>What meal time?</label>
+                    <label for="radio-Breakfast" class="pure-radio">
+                        <input type="radio" id="radio-Breakfast" name="meal" value="Breakfast" /> Breakfast
+                    </label>
+                    <label for="radio-Brunch" class="pure-radio">
+                        <input type="radio" id="radio-Brunch" name="meal" value="Brunch" /> Brunch
+                    </label>
+                    <label for="radio-Lunch" class="pure-radio">
+                        <input type="radio" id="radio-Lunch" name="meal" value="Lunch" required/> Lunch
+                    </label>
+                    <label for="radio-Dinner" class="pure-radio">
+                        <input type="radio" id="radio-Dinner" name="meal" value="Dinner" /> Dinner
+                    </label>
+                    <label for="radio-Late" class="pure-radio">
+                        <input type="radio" id="radio-Late" name="meal" value="Late" /> Late night snack
+                    </label>
+             `   </div>
+            
+
+                <div class="pure-controls">
+                    <label for="restaurant">
+                        <input type="checkbox" id="restaurant" name="restaurant">  Do you usually eat/get food from the same place?
+                    </label>
+                    <textarea id="conditionalRestaurant" name="conditionalRestaurant" 
+                        placeholder="What's the name of the restaurant" style="display: none;"></textarea>
+                    
+                </div>
+
+                <div class="pure-controls">
+                    <button type="submit" class="pure-button pure-button-primary">Next</button>
+                </div>
+            
+            
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}
+
+
+<!-- text input – this field is “required” and has a minimum length of 3 characters. 
+    The user cannot proceed without filling it out – use html5 validation. -->
+
+<!-- a group of 3 or more radio buttons -->
+
+<!-- select box with 3 or more options -->
+
+<!-- checkbox -->
+
+<!-- finally, there must be one “conditional” field of type textarea that appears 
+    or disappears depending on the state of the checkbox input. -->

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Thanks{% endblock %}
+
+{% block content %}
+    <div class="thanks">
+        {% if name %}
+            <p>Thank you for your response, {{ name }}.</p>
+        {% else %}
+            <p>Thank you for your response.</p>
+        {% endif %}
+    </div>
+{% endblock %}

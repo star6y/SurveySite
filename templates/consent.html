@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Consent{% endblock %}
+
+{% block content %}
+<div class="pure-g content consent">
+    <div class="pure-u-1">
+        <p>We want to survey people about their eating habits in the last 30 days.</p>
+        <p>Do you want to take this survey?</p>
+        <div class="choice">
+            <a href="/survey"><button>Consent</button></a>
+            <a href="/decline"><button>Decline</button></a>
+        </div>
+    </div>
+</div>
+{% endblock %}
